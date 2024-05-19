@@ -1,64 +1,96 @@
-/* General settings for all elements */
+/* Allgemeine Einstellungen für alle Elemente */
 * {
-    box-sizing: border-box; /* Ensure that padding and border are included in the element's total width and height */
+    box-sizing: border-box; /* Stellt sicher, dass padding und border in die Gesamtbreite und -höhe des Elements einberechnet werden */
 }
 
 body {
     margin: 0;
     padding: 0;
-    background-color: black;
     font-family: 'Arial', sans-serif;
-    color: white;
-    text-align: center; /* مرکزیت متن */
+    color: rgb(210, 21, 21);
+    text-align: center; /* Text zentrieren */
 }
 
 header {
-    display: flex; /* Use flexbox to arrange header elements in a row */
-    justify-content: space-between; /* Space out elements within the header */
-    align-items: center; /* Align items vertically in the center */
-    padding: 10px;
-    background-color: black;
-    color: white;
+    background-color: #333; /* Hintergrundfarbe des Headers */
+    color: white; /* Textfarbe des Headers */
+    padding: 10px 0; /* Padding oben und unten hinzufügen */
+    display: flex; /* Flexbox für die Anordnung der Header-Elemente verwenden */
+    justify-content: center; /* Elemente im Header zentrieren */
+    align-items: center; /* Elemente vertikal in der Mitte ausrichten */
+    position: fixed; /* Header am oberen Rand der Seite fixieren */
+    width: 100%; /* Breite auf 100% der Anzeigebreite einstellen */
+    top: 0; /* Header am oberen Rand der Seite positionieren */
+    z-index: 1000; /* Sicherstellen, dass der Header über anderen Elementen liegt */
 }
 
-header h1 {
-    margin: 0; /* Remove default margin */
-    height: 2vh; /* Sets the navigation height */
-    width: 100vw; /* Sets the navigation width to 100% of the viewport width */
-    position: fixed; /* Fixes the navigation at the top */
-    top: 0; /* Positions the navigation at the top of the viewport */
-    left: 0; /* Positions the navigation at the left edge of the viewport */
-    z-index: 2000; /* Ensures the navigation is on top of other elements */
-    display: flex; /* Uses flexbox layout for navigation */
-    justify-content: center; /* Centers navigation items */
-    padding: 0; /* Removes padding */
-    margin: 0; /* Removes margin */
-  }
-  
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0; /* Ensure no default margin */
-    display: flex; /* Use flexbox to arrange items in a row */
+header ul {
+    list-style-type: none; /* Listenzeichen von den Listenelementen entfernen */
+    padding: 0; /* Padding entfernen */
+    margin: 0; /* Margin entfernen */
+    display: flex; /* Flexbox-Layout für die Liste verwenden */
+    flex-wrap: wrap; /* Elemente umbrechen, wenn kein Platz mehr vorhanden ist */
 }
 
-nav ul li {
-    margin-left: 20px; /* Add some spacing between the items */
+header ul li {
+    margin: 0 10px; /* Abstand zwischen den Navigationselementen hinzufügen */
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: white;
+header ul li a {
+    text-decoration: none; /* Unterstreichung von Links entfernen */
+    color: white; /* Textfarbe der Links */
+    padding: 10px; /* Padding um die Links hinzufügen */
+    display: block; /* Sicherstellen, dass die Links den gesamten Bereich abdecken */
 }
 
-div {
-    padding: 20px;
-    margin: 10px 0;
-    text-align: center;
-    background-color: black; /* Ensure div background is black */
-    color: white; /* Ensure text color is white */
+header ul li a:hover {
+    background-color: #e33030; /* Hintergrundfarbe im Hover-Zustand ändern */
+    border-radius: 5px; /* Ecken abrunden */
 }
 
-#banner, #info, #zeitplan, #roboter {
-    text-align: center;
+#banner, #info, #zeitplan, #Roboter {
+    padding: 60px 20px; /* Padding um den Inhalt der Sektionen hinzufügen */
+    margin-top: 80px; /* Abstand oben und unten hinzufügen */
+    margin-bottom: 30px;
+    background-color: #222222; /* Hintergrundfarbe der Sektionen */
+    color: white; /* Textfarbe der Sektionen */
+}
+
+/* Sicherstellen, dass der Text in den Sektionen zentriert und gut lesbar ist */
+section h2 {
+    margin: 0 0 20px; /* Oben kein und unten Abstand hinzufügen */
+    font-size: 24px; /* Schriftgröße einstellen */
+}
+
+section p {
+    margin: 0; /* Standardabstand entfernen */
+}
+
+/* Media Queries für unterschiedliche Bildschirmgrößen */
+@media (max-width: 768px) {
+    header ul {
+        flex-direction: column; /* Navigationselemente untereinander anordnen */
+    }
+
+    header ul li {
+        margin: 10px 0; /* Abstand oben und unten hinzufügen */
+    }
+
+    #banner, #info, #zeitplan, #Roboter {
+        padding: 40px 10px; /* Padding um den Inhalt der Sektionen reduzieren */
+    }
+
+    section h2 {
+        font-size: 20px; /* Schriftgröße reduzieren */
+    }
+}
+
+@media (max-width: 480px) {
+    header ul li a {
+        padding: 8px; /* Padding der Links reduzieren */
+    }
+
+    section h2 {
+        font-size: 18px; /* Schriftgröße weiter reduzieren */
+    }
 }
