@@ -1,0 +1,64 @@
+/* General settings for all elements */
+* {
+    box-sizing: border-box; /* Ensure that padding and border are included in the element's total width and height */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    font-family: 'Arial', sans-serif;
+    color: white;
+    text-align: center; /* مرکزیت متن */
+}
+
+header {
+    display: flex; /* Use flexbox to arrange header elements in a row */
+    justify-content: space-between; /* Space out elements within the header */
+    align-items: center; /* Align items vertically in the center */
+    padding: 10px;
+    background-color: black;
+    color: white;
+}
+
+header h1 {
+    margin: 0; /* Remove default margin */
+    height: 2vh; /* Sets the navigation height */
+    width: 100vw; /* Sets the navigation width to 100% of the viewport width */
+    position: fixed; /* Fixes the navigation at the top */
+    top: 0; /* Positions the navigation at the top of the viewport */
+    left: 0; /* Positions the navigation at the left edge of the viewport */
+    z-index: 2000; /* Ensures the navigation is on top of other elements */
+    display: flex; /* Uses flexbox layout for navigation */
+    justify-content: center; /* Centers navigation items */
+    padding: 0; /* Removes padding */
+    margin: 0; /* Removes margin */
+  }
+  
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; /* Ensure no default margin */
+    display: flex; /* Use flexbox to arrange items in a row */
+}
+
+nav ul li {
+    margin-left: 20px; /* Add some spacing between the items */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+div {
+    padding: 20px;
+    margin: 10px 0;
+    text-align: center;
+    background-color: black; /* Ensure div background is black */
+    color: white; /* Ensure text color is white */
+}
+
+#banner, #info, #zeitplan, #roboter {
+    text-align: center;
+}
