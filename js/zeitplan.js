@@ -142,3 +142,22 @@ const zeitplan = {
     },
   ],
 };
+
+document.addEventListener('DOMContentLoaded', () => {
+  const scheduleDiv = document.getElementById('schedule');
+  zeitplan.fights.forEach(fight => {
+    const fightDiv = document.createElement('div');
+    const date = new Date(fight.time);
+    fightDiv.innerHTML = `
+      <p>${fight["robot 1"]} vs ${fight["robot 2"]}</p>
+      <p>${date.toLocaleDateString('de-DE', {
+        minute: 'numeric',
+        hour: 'numeric',
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      })}</p>
+    `;
+    scheduleDiv.appendChild(fightDiv);
+  });
+});
